@@ -32,7 +32,15 @@ public class scrip : MonoBehaviour
         {
             gg.transform.position += Vector3.right * speed * Time.deltaTime;
         }
-        
-            
-    }   
+
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Almas"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
